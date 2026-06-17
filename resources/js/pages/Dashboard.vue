@@ -211,6 +211,7 @@ const statistik = ref({
   tertinggi: null,
   terendah: null,
   rata_rata: 0,
+  chart: null,
 });
 
 const loadStatistik = async () => {
@@ -267,8 +268,10 @@ const statistics = [
   },
 ];
 
-onMounted(() => {
-  loadStatistik();
+onMounted(async () => {
+  await loadStatistik();
+
+  console.log(statistik.value.chart);
 
   new Chart(chartCanvas.value, {
     type: "bar",
@@ -289,7 +292,7 @@ onMounted(() => {
       ],
       datasets: [
         {
-          data: [60, 45, 78, 30, 35, 40, 50, 20, 60, 80, 70, 67],
+          data: statistik.value.chart,
           borderRadius: 12,
           backgroundColor: [
             "#3B82F6",
@@ -311,20 +314,17 @@ onMounted(() => {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-
       plugins: {
         legend: {
           display: false,
         },
       },
-
       scales: {
         x: {
           grid: {
             display: false,
           },
         },
-
         y: {
           beginAtZero: true,
           ticks: {

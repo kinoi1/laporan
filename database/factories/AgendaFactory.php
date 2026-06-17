@@ -17,11 +17,13 @@ class AgendaFactory extends Factory
      */
     public function definition(): array
     {
+        static $nomorAgenda = 1;
+
         $tanggalSurat = $this->faker->dateTimeBetween('-3 months', 'now');
         $tanggalDiterima = (clone $tanggalSurat)->modify('+' . rand(0, 7) . ' days');
 
         return [
-            'nomor_agenda' => (string) $this->faker->unique()->numberBetween(1, 99999),
+            'nomor_agenda' => $nomorAgenda++,
 
             'tanggal_diterima' => $tanggalDiterima->format('Y-m-d'),
 

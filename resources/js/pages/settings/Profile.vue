@@ -107,5 +107,5 @@ const user = computed(() => page.props.auth.user);
         </Form>
     </div>
 
-    <DeleteUser />
+    <!-- <DeleteUser /> -->
 </template>

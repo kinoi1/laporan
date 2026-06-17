@@ -8,6 +8,8 @@ import { toUrl } from '@/lib/utils';
 import { edit as editAppearance } from '@/routes/appearance';
 import { edit as editProfile } from '@/routes/profile';
 import { edit as editSecurity } from '@/routes/security';
+import { edit as editAgenda } from '@/routes/agenda/settings';
+
 import type { NavItem } from '@/types';
 
 const sidebarNavItems: NavItem[] = [
@@ -19,9 +21,13 @@ const sidebarNavItems: NavItem[] = [
         title: 'Security',
         href: editSecurity(),
     },
+    // {
+    //     title: 'Appearance',
+    //     href: editAppearance(),
+    // },
     {
-        title: 'Appearance',
-        href: editAppearance(),
+        title: 'Set Nomer Agenda',
+        href: editAgenda(),
     },
 ];
 

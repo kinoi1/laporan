@@ -1,29 +1,64 @@
-import { createInertiaApp } from '@inertiajs/vue3';
-import { initializeTheme } from '@/composables/useAppearance';
-import AppLayout from '@/layouts/AppLayout.vue';
-import AuthLayout from '@/layouts/AuthLayout.vue';
-import SettingsLayout from '@/layouts/settings/Layout.vue';
-import { initializeFlashToast } from '@/lib/flashToast';
+import { createInertiaApp } from "@inertiajs/vue3";
+import { initializeTheme } from "@/composables/useAppearance";
+import AppLayout from "@/layouts/AppLayout.vue";
+import AuthLayout from "@/layouts/AuthLayout.vue";
+import SettingsLayout from "@/layouts/settings/Layout.vue";
+import { initializeFlashToast } from "@/lib/flashToast";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+import {
+  faHouse,
+  faUser,
+  faBell,
+  faFileLines,
+  faEye,
+  faDownload,
+  faPrint,
+  faSearch,
+  faFilter,
+} from "@fortawesome/free-solid-svg-icons";
+import { createApp, h } from "vue";
+
+library.add(
+  faHouse,
+  faUser,
+  faBell,
+  faFileLines,
+  faEye,
+  faDownload,
+  faPrint,
+  faSearch,
+  faFilter,
+);
+
+const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
 createInertiaApp({
-    title: (title) => (title ? `${title} - ${appName}` : appName),
-    layout: (name) => {
-        switch (true) {
-            case name === 'Welcome':
-                return null;
-            case name.startsWith('auth/'):
-                return AuthLayout;
-            case name.startsWith('settings/'):
-                return [AppLayout, SettingsLayout];
-            default:
-                return AppLayout;
-        }
-    },
-    progress: {
-        color: '#4B5563',
-    },
+  title: (title) => (title ? `${title} - ${appName}` : appName),
+  layout: (name) => {
+    switch (true) {
+      case name === "Welcome":
+        return null;
+      case name.startsWith("auth/"):
+        return AuthLayout;
+      case name.startsWith("settings/"):
+        return [AppLayout, SettingsLayout];
+      default:
+        return AppLayout;
+    }
+  },
+  progress: {
+    color: "#4B5563",
+  },
+  setup({ el, App, props, plugin }) {
+    createApp({
+      render: () => h(App, props),
+    })
+      .use(plugin)
+      .component("font-awesome-icon", FontAwesomeIcon)
+      .mount(el);
+  },
 });
 
 // This will set light / dark mode on page load...

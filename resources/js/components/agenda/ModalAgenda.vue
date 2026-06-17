@@ -3,7 +3,9 @@
     v-if="show"
     class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
   >
-    <div class="w-full max-w-2xl rounded-lg bg-white shadow-lg">
+    <div
+      class="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white shadow-lg"
+    >
       <!-- Header -->
       <div class="flex items-center justify-between border-b px-6 py-4">
         <h3 class="text-lg font-semibold">
@@ -170,7 +172,7 @@ import FilePondPluginFileValidateSize from "filepond-plugin-file-validate-size";
 
 const FilePond = vueFilePond(
   FilePondPluginFileValidateType,
-  FilePondPluginFileValidateSize,
+  FilePondPluginFileValidateSize
   // FilePondPluginImagePreview
 );
 

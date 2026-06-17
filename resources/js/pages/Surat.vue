@@ -47,6 +47,7 @@
             <tr class="bg-slate-50 border-b">
               <th>No</th>
               <th class="px-4 py-3 text-left">No Agenda</th>
+              <th class="px-4 py-3 text-left">Tanggal Diterima</th>
               <th class="px-4 py-3 text-left">Asal Surat</th>
               <th class="px-4 py-3 text-left">Perihal Surat</th>
               <th class="px-4 py-3 text-center">Aksi</th>
@@ -69,6 +70,9 @@
 
               <td class="px-6 py-4">
                 {{ item.nomor_agenda }}
+              </td>
+              <td class="px-6 py-4">
+                {{ item.tanggal_diterima }}
               </td>
 
               <td class="px-6 py-4">
@@ -99,7 +103,7 @@
                     @click.prevent="deleteData(item)"
                     class="px-3 py-2 rounded-lg bg-red-100 text-red-600"
                   >
-                    Hapus
+                    <font-awesome-icon icon="trash" />
                   </button>
                 </div>
               </td>

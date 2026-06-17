@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Agenda;
+use App\Models\Settings;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
@@ -120,8 +121,16 @@ class AgendaController extends Controller
 
         $count = Agenda::whereYear('tanggal_diterima', $year)->count();
 
+        $prefix = Settings::where('key', 'agenda_prefix')->value('value');
+
+        $nomorAgenda = $count + 1;
+
+        if (!empty($prefix)) {
+            $nomorAgenda = $prefix . $nomorAgenda;
+        }
+
         return response()->json([
-            'nomor_agenda' => $count + 1
+            'nomor_agenda' => $nomorAgenda
         ]);
     }
     public function destroy($id)

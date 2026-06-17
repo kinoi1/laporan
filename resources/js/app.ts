@@ -17,6 +17,7 @@ import {
   faPrint,
   faSearch,
   faFilter,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { createApp, h } from "vue";
 
@@ -30,6 +31,7 @@ library.add(
   faPrint,
   faSearch,
   faFilter,
+  faTrash
 );
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";

@@ -236,7 +236,7 @@
                     <tr>
                         <td>Asal Surat</td>
                         <td>:</td>
-                        <td>{{ $agenda->asal_surat }}</td>
+                        <td>{{ $agenda->pengirim }}</td>
                     </tr>
 
                     <tr>

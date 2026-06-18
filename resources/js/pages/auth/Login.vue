@@ -60,7 +60,7 @@ defineProps<{
       </div>
 
       <div class="grid gap-2">
-        <div class="flex items-center justify-between">
+        <!-- <div class="flex items-center justify-between">
           <Label for="password" class="text-white">Password</Label>
           <TextLink
             v-if="canResetPassword"
@@ -70,7 +70,7 @@ defineProps<{
           >
             Forgot password?
           </TextLink>
-        </div>
+        </div> -->
         <PasswordInput
           id="password"
           name="password"
@@ -83,12 +83,12 @@ defineProps<{
         <InputError :message="errors.password" />
       </div>
 
-      <div class="flex items-center justify-between">
+      <!-- <div class="flex items-center justify-between">
         <Label for="remember" class="flex items-center text-white space-x-3">
           <Checkbox id="remember" name="remember" :tabindex="3" />
           <span>Remember me</span>
         </Label>
-      </div>
+      </div> -->
 
       <Button
         type="submit"
@@ -102,9 +102,9 @@ defineProps<{
       </Button>
     </div>
 
-    <div class="text-center text-sm text-white" v-if="canRegister">
+    <!-- <div class="text-center text-sm text-white" v-if="canRegister">
       Don't have an account?
       <TextLink :href="register()" :tabindex="5" class="text-white">Sign up</TextLink>
-    </div>
+    </div> -->
   </Form>
 </template>

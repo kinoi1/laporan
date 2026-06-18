@@ -17,10 +17,10 @@ const sidebarNavItems: NavItem[] = [
         title: 'Profile',
         href: editProfile(),
     },
-    {
-        title: 'Security',
-        href: editSecurity(),
-    },
+    // {
+    //     title: 'Security',
+    //     href: editSecurity(),
+    // },
     // {
     //     title: 'Appearance',
     //     href: editAppearance(),

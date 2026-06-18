@@ -95,6 +95,7 @@
                     <font-awesome-icon icon="eye" />
                   </button>
                   <button
+                    v-if="item.attachment && item.attachment !== ''"
                     @click="printData(item)"
                     class="px-3 py-2 rounded-lg bg-blue-100 text-blue-600"
                   >
@@ -217,7 +218,6 @@ const loadData = async (page = 1) => {
         sort: sort.value,
       },
     });
-    console.log(response);
     data.value = response.data.data;
     pagination.value = response.data.pagination;
   } catch (error) {
@@ -236,7 +236,6 @@ const changePage = (page) => {
 watchDebounced(
   [search, sort],
   () => {
-    console.log(sort);
     loadData();
   },
   {
@@ -247,7 +246,7 @@ watchDebounced(
 
 const printData = async (item) => {
   const result = await Swal.fire({
-    title: `Apakah anda akan melakukan cetak gambar?`,
+    title: `Apakah anda akan melakukan cetak dokumen?`,
     text: "Anda akan diarahkan ke halaman cetak.",
     icon: "question",
     showCancelButton: true,

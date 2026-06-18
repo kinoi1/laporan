@@ -5,7 +5,7 @@
 <div class="container">
     <iframe
         id="pdfViewer"
-        src="{{ asset('storage/' . $agenda->attachment) }}"
+        src="{{ Storage::url($agenda->attachment) }}"
         width="100%"
         height="800">
     </iframe>
@@ -16,6 +16,8 @@
 </div>
 
 <script>
+    var tes = `{{ $agenda }}`;
+    console.log(tes);
 function printPdf() {
     const iframe = document.getElementById('pdfViewer');
     iframe.contentWindow.print();

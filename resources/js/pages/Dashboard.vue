@@ -219,7 +219,6 @@ const loadStatistik = async () => {
     const response = await axios.get("/dashboard-data");
 
     statistik.value = response.data;
-    console.log(response);
   } catch (error) {
     console.error(error);
   }

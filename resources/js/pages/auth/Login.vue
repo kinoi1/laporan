@@ -42,53 +42,42 @@ defineProps<{
     v-slot="{ errors, processing }"
     class="flex flex-col gap-6"
   >
+  <div class="flex flex-col gap-2 pt-6 border-t-sky-600 border-t-2 border-x-none border-b-none">
+    <span class="font-medium">SELAMAT DATANG!</span>
+    <span class="text-xs">Silakan masukkan Email dan Password</span>
+  </div>
     <div class="grid gap-6">
       <div class="grid gap-2">
-        <Label for="email" class="text-white">Email address</Label>
+        <Label for="email" class="text-gray-900">Email address</Label>
         <Input
           id="email"
           type="email"
           name="email"
-          class="placeholder:text-white text-white"
+          class="placeholder:text-gray-900 text-gray-900"
           required
           autofocus
           :tabindex="1"
           autocomplete="email"
           placeholder="email@example.com"
         />
-        <InputError :message="errors.email" />
+        <InputError :message="errors.email ? 'Username atau password yang Anda masukkan salah.' : ''" />
       </div>
 
       <div class="grid gap-2">
-        <!-- <div class="flex items-center justify-between">
-          <Label for="password" class="text-white">Password</Label>
-          <TextLink
-            v-if="canResetPassword"
-            :href="request()"
-            class="text-sm text-white"
-            :tabindex="5"
-          >
-            Forgot password?
-          </TextLink>
-        </div> -->
+        <Label for="password" class="text-gray-900">Password</Label>
+
         <PasswordInput
           id="password"
           name="password"
-          class="placeholder:text-white text-white"
+          class="placeholder:text-gray-900 text-gray-900"
           required
           :tabindex="2"
           autocomplete="current-password"
           placeholder="Password"
         />
-        <InputError :message="errors.password" />
+        <InputError :message="errors.password ? 'Username atau password yang Anda masukkan salah.' : ''"
+ />
       </div>
-
-      <!-- <div class="flex items-center justify-between">
-        <Label for="remember" class="flex items-center text-white space-x-3">
-          <Checkbox id="remember" name="remember" :tabindex="3" />
-          <span>Remember me</span>
-        </Label>
-      </div> -->
 
       <Button
         type="submit"
@@ -102,9 +91,5 @@ defineProps<{
       </Button>
     </div>
 
-    <!-- <div class="text-center text-sm text-white" v-if="canRegister">
-      Don't have an account?
-      <TextLink :href="register()" :tabindex="5" class="text-white">Sign up</TextLink>
-    </div> -->
   </Form>
 </template>

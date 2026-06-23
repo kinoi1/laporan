@@ -324,7 +324,7 @@ const printData = async (item) => {
   });
 
   if (result.isConfirmed) {
-    window.open(`/arsip/print/${item.id}`, "_blank");
+    window.open(`/arsip/print/${item.nomor_agenda}`, "_blank");
   }
 };
 onMounted(() => {

@@ -212,7 +212,7 @@
                     <tr>
                         <td>No. Agenda</td>
                         <td>:</td>
-                        <td>{{ $agenda->id }}</td>
+                        <td>{{ $agenda->nomor_agenda }}</td>
                     </tr>
 
                     <tr>

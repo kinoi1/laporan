@@ -13,43 +13,7 @@
         </h1>
       </div>
 
-      <div class="flex items-center gap-4">
-        <!-- Notifikasi -->
-        <button
-          class="relative bg-white rounded-2xl shadow-sm border border-slate-100 w-16 h-16 flex items-center justify-center hover:shadow-md transition"
-        >
-          <i class="bi bi-bell text-2xl text-slate-600"></i>
-
-          <span
-            class="absolute top-2 right-2 flex items-center justify-center w-5 h-5 rounded-full bg-red-500 text-white text-xs font-semibold"
-          >
-            3
-          </span>
-        </button>
-
-        <!-- Profile -->
-        <button
-          class="flex items-center gap-4 bg-white rounded-2xl shadow-sm border border-slate-100 px-5 py-3 hover:shadow-md transition"
-        >
-          <div
-            class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center"
-          >
-            <i class="bi bi-person-fill text-slate-600 text-xl"></i>
-          </div>
-
-          <div class="text-left">
-            <p class="font-semibold text-slate-800">
-              Admin
-            </p>
-
-            <p class="text-sm text-slate-500">
-              Tim Kerja
-            </p>
-          </div>
-
-          <i class="bi bi-chevron-down text-slate-500"></i>
-        </button>
-      </div>
+      
     </div>
 
     <!-- Statistik -->

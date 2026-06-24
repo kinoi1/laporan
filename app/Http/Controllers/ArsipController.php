@@ -53,8 +53,9 @@ class ArsipController extends Controller
             ]
         ]);
     }
-    public function print(Agenda $agenda)
+    public function print($nomor_agenda)
     {
+        $agenda = Agenda::where('nomor_agenda', $nomor_agenda)->firstOrFail();
         return view('agenda.print-disposisi', compact('agenda'));
     }
 

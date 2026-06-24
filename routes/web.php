@@ -4,7 +4,6 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features;
 
 Route::inertia('/', 'auth/Login')->name('home');
 

@@ -211,6 +211,7 @@ const server = {
 watch(
   () => props.data,
   (value) => {
+    console.log("props.data", value);
     console.log(value);
     form.id = value?.id ?? null;
     form.nomor_agenda = value?.nomor_agenda ?? "";
@@ -243,7 +244,7 @@ const handleFile = (event) => {
 
 const submitForm = () => {
   const formData = new FormData();
-
+  console.log(form);
   formData.append("nomor_agenda", form.nomor_agenda);
   formData.append("tanggal_diterima", form.tanggal_diterima);
   formData.append("nomor_surat", form.nomor_surat);

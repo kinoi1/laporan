@@ -20,7 +20,7 @@
 
         .container {
             border: 1px solid #000;
-            min-height: 100vh;
+            /* min-height: 100vh; */
         }
 
         .header {
@@ -272,7 +272,7 @@
         <div class="section disposisi">
             <strong>Isi Disposisi :</strong>
 
-            <p style="margin-top:20px">
+            <p style="margin-top:0px">
                 {{ $agenda->disposisi }}
             </p>
             <!-- TANDA TANGAN -->

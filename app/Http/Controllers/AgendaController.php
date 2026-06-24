@@ -50,13 +50,13 @@ class AgendaController extends Controller
     public function update(Request $request, Agenda $agenda)
     {
         $validated = $request->validate([
-            'nomor_agenda' => 'required|unique:agendas,nomor_agenda,' . $agenda->id,
+            'nomor_agenda' => 'required|unique:agendas,nomor_agenda,' . $agenda->nomor_agenda,
             'tanggal_diterima' => 'required|date',
-            'nomor_surat' => 'required',
+            'nomor_surat' => 'required|max:255',
             'tanggal_surat' => 'required|date',
             'perihal' => 'required',
-            'pengirim' => 'required',
-            'attachment' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:5120'
+            'pengirim' => 'required|max:255',
+            'attachment' => 'nullable|file|mimes:pdf|max:10024'
         ]);
 
         if ($request->hasFile('attachment')) {

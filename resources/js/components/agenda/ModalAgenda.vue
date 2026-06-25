@@ -102,20 +102,7 @@
 
           <!-- Attachment -->
           <div class="md:col-span-2">
-            <!-- <label class="mb-1 block text-sm font-medium">
-              Attachment Surat
-            </label>
-
-            <input
-              type="file"
-              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-              @change="handleFile"
-              class="block w-full rounded-lg border px-3 py-2"
-            />
-
-            <p v-if="form.attachment" class="mt-2 text-sm text-gray-600">
-              {{ form.attachment.name }}
-            </p> -->
+            
             <FilePond
               name="attachment"
               label-idle="Tarik file ke sini atau <span class='filepond--label-action'>Pilih File</span>"

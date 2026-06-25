@@ -50,7 +50,7 @@ class AgendaController extends Controller
     public function update(Request $request, Agenda $agenda)
     {
         $validated = $request->validate([
-            'nomor_agenda' => 'required|unique:agendas,nomor_agenda,' . $agenda->nomor_agenda,
+            // 'nomor_agenda' => 'required|unique:agendas,nomor_agenda,' . $agenda->id,
             'tanggal_diterima' => 'required|date',
             'nomor_surat' => 'required|max:255',
             'tanggal_surat' => 'required|date',

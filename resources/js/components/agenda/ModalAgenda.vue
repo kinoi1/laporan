@@ -255,6 +255,6 @@ const submitForm = () => {
   if (form.attachment) {
     formData.append("attachment", form.attachment);
   }
-  emit("save", formData, form.id);
+  emit("save", formData, form.nomor_agenda);
 };
 </script>

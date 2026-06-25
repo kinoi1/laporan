@@ -49,15 +49,19 @@ class AgendaController extends Controller
 
     public function update(Request $request, Agenda $agenda)
     {
-        $validated = $request->validate([
-            // 'nomor_agenda' => 'required|unique:agendas,nomor_agenda,' . $agenda->id,
-            'tanggal_diterima' => 'required|date',
-            'nomor_surat' => 'required|max:255',
-            'tanggal_surat' => 'required|date',
-            'perihal' => 'required',
-            'pengirim' => 'required|max:255',
-            'attachment' => 'nullable|file|mimes:pdf|max:10024'
-        ]);
+        try {
+            $validated = $request->validate([
+                // 'nomor_agenda' => 'required|unique:agendas,nomor_agenda,' . $agenda->id,
+                'tanggal_diterima' => 'required|date',
+                'nomor_surat' => 'required|max:255',
+                'tanggal_surat' => 'required|date',
+                'perihal' => 'required',
+                'pengirim' => 'required|max:255',
+                'attachment' => 'nullable|file|mimes:pdf|max:10024'
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            dd($e->errors());
+        }
 
         if ($request->hasFile('attachment')) {
 

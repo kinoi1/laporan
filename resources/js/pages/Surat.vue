@@ -224,6 +224,7 @@ const showModal = ref(false);
 const saveAgenda = async (formData, id) => {
   try {
     if (id) {
+      formData.append("_method", "PUT");
       await axios.post(`/agenda/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",

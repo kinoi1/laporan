@@ -74,7 +74,7 @@ class AgendaController extends Controller
                 ->store('agenda', 'public');
         }
 
-        $agenda->update($validated);
+        Agenda::whereId($agenda->id)->update($validated);
         return response()->json([
             'success' => true,
             'message' => 'Agenda berhasil diperbarui'

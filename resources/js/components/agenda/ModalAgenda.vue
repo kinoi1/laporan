@@ -136,7 +136,7 @@
             type="submit"
             class="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
           >
-            {{ form.id ? "Update" : "Simpan" }}
+            {{ form.id ? "Perbaharui" : "Simpan" }}
           </button>
         </div>
       </form>

@@ -7,7 +7,7 @@
 
     <style>
         @page {
-            size: A4;
+            size: 162mm 229mm;
             margin: 10mm;
         }
 
@@ -102,7 +102,9 @@
 
         .forward {
             min-height: 100px;
-            text-align: center;
+            text-align: left;
+            display: flex;
+            flex-direction: row;
         }
 
         .disposisi {
@@ -127,7 +129,7 @@
 
         .info-wrapper {
             display: flex;
-            justify-content: center;
+            justify-content: start;
         }
 
         .info-table {
@@ -251,21 +253,20 @@
         <!-- DITERUSKAN -->
         <div class="section forward">
             <strong>
-                <input type="checkbox">
                 Diteruskan Kepada :
             </strong>
+            <div>
 
-            <br><br>
+                □ ..............................................
 
-            □ ..............................................
+                <br><br>
 
-            <br><br>
+                □ ..............................................
 
-            □ ..............................................
+                <br><br>
 
-            <br><br>
-
-            □ ..............................................
+                □ ..............................................
+            </div>
         </div>
 
         <!-- ISI DISPOSISI -->

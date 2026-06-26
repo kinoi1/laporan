@@ -231,7 +231,6 @@ const handleFile = (event) => {
 
 const submitForm = () => {
   const formData = new FormData();
-  console.log(form);
   formData.append("nomor_agenda", form.nomor_agenda);
   formData.append("tanggal_diterima", form.tanggal_diterima);
   formData.append("nomor_surat", form.nomor_surat);
@@ -242,6 +241,6 @@ const submitForm = () => {
   if (form.attachment) {
     formData.append("attachment", form.attachment);
   }
-  emit("save", formData, form.nomor_agenda);
+  emit("save", formData, form.id);
 };
 </script>

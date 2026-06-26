@@ -51,7 +51,7 @@ class AgendaController extends Controller
     {
         try {
             $validated = $request->validate([
-                // 'nomor_agenda' => 'required|unique:agendas,nomor_agenda,' . $agenda->id,
+                'nomor_agenda' => 'required|max:255',
                 'tanggal_diterima' => 'required|date',
                 'nomor_surat' => 'required|max:255',
                 'tanggal_surat' => 'required|date',
@@ -73,8 +73,7 @@ class AgendaController extends Controller
                 ->file('attachment')
                 ->store('agenda', 'public');
         }
-
-        Agenda::whereId($agenda->id)->update($validated);
+        $agenda->update($validated);
         return response()->json([
             'success' => true,
             'message' => 'Agenda berhasil diperbarui'

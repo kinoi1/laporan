@@ -10,7 +10,7 @@
       <div class="flex items-center justify-between border-b px-6 py-4">
         <h3 class="text-lg font-semibold">
           {{ form.id ? "Edit Agenda Surat" : "Tambah Agenda Surat" }}
-        </h3>
+        </h3>    
 
         <button
           @click="$emit('close')"
